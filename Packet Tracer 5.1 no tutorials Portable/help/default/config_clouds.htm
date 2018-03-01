@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Configuring Clouds</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+
+	</head>
+	<body>
+
+
+<p class="MainHeading1">Configuring Clouds
+<hr>
+<p>The <strong>Config</strong> tab offers three general levels of configuration: global, connections, and interface. To configure at the global level, press the <strong>GLOBAL</strong> button to expand the <strong>Settings</strong> button (if it has not already been expanded). To configure connections, press the <strong>CONNECTIONS</strong> button to expand the list of connections, and then choose the connection. To configure an interface, press the <strong>INTERFACE</strong> button to expand the list of interfaces, and then choose the interface.</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Global Settings</p>
+<p>The only global setting available for a cloud is its display name.</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Connection Settings</p>
+<p>You can use the <strong>Frame Relay</strong> sub-panel to establish Frame Relay connections between sub-links on the ports of the cloud. Configure DLCIs on the serial interfaces first. Then, from the left side, choose a port and one of its sub-links. Then from the right side, choose another port and one of its sub-links. Press the <strong>Add</strong> button to make a connection between those two sub-links. The connection will now appear on the list. You can remove a connection from the list with the <strong>Remove</strong> button.</p>
+<p class="myPic">
+<img src="images/config_clouds_1.jpg">
+</p>
+<p>You can also use the <strong>DSL</strong> or <strong>Cable</strong> sub-panel to establish connections between modem ports (for DSL) or coaxial ports (for Cable) on the cloud to the Ethernet ports on the cloud. To establish a DSL connection, choose the appropriate modem port on the left-side drop down menu and on the right-side drop down menu choose an Ethernet port, which has its Provider Network set to DSL. Press the <strong>Add</strong> button to make the connection. You can remove a connection from the list with the <strong>Remove</strong> button. To establish a Cable connection, choose the appropriate coaxial port on the left-side drop down menu and on the right-side choose an Ethernet port which has its Provider Network set to Cable.</p>
+<p class="myPic">
+<img src="images/config_clouds_2.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Interface Configuration</p>
+<p>Clouds can support four interface types: modem, Ethernet, coaxial, and serial. For a modem port, you can set a <strong>Phone Number</strong>, which another device with a modem port can dial. For an Ethernet port, you can set the <strong>Provider Network</strong> to either DSL or Cable. For a coaxial port, there are no settings to configure. For a serial port, you can toggle its <strong>Port Status</strong>, choose an <strong>LMI</strong> (ANSI, Cisco, or Q933a), and assign <strong>DLCIs</strong> to the interface. To add a DLCI, enter an identifying number and a name for it, and then press the <strong>Add</strong> button to add it to the list. You can remove a DLCI from the port with the <strong>Remove</strong> button.</p>
+<p class="myPic">
+<img src="images/config_clouds_3.jpg">
+</p>
+</body>
+</html>

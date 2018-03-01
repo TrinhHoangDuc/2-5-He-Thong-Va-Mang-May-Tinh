@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Layer 4 Models</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+		<p class="MainHeading1">Layer 4 Models</p>
+		<hr>
+		<p class="MainHeading2">How devices process UDP segments</p>
+		<p class="myList">This procedure explains how a device sends and receives UDP 
+			segments.</p>
+		<p class="myList">&nbsp;</p>
+		<ul>
+			<li>
+				When the device receives a segment:
+				<ul>
+					<li>
+					It de-encapsulates it and examines the UDP header for port information.
+					<li>
+						It then maps the local port information and sends the payload up to a higher 
+						layer (the application layer) for processing.
+						<ul>
+							<li>
+								If it cannot find the upper process based on the port information, it drops the segment.</li>
+						</ul>
+					</li>
+				</ul>
+			<li>
+				When the device wants to send a segment:
+				<ul>
+					<li>
+					It encapsulates the payload with a UDP header.
+					<li>
+						It sends the segment to the lower layer for processing.</li>
+				</ul>
+			</li>
+		</ul>
+		<p class="myList">&nbsp;</p>
+		<p class="MainHeading2">How devices handle TCP segments</p>
+		<p class="myList">When the device receives a TCP segment (<A href="flowcharts/DeviceReceiveTCPSegment.jpg" target=_blank>flowchart</A> here):</p>
+		<P class="myList">&nbsp;</P>
+		<UL>
+			<LI>If there is no socket listening at the destination port or no connections matching the source and destination IPs and ports:</LI>
+			<UL>
+				<LI>Drop the segment and stop.</LI>
+			</UL>
+			<LI>If the connection is not in LISTEN state:</LI>
+			<UL>
+				<LI>If the sequence number in the received TCP header is 1 less than the connection's sequence number:</LI>
+				<UL>
+					<LI>Mark this as a duplicate segment.</LI>
+				</UL>
+				<LI>If the sequence numbers are the same:</LI>
+				<UL>
+					<LI>If the TCP header is not an empty ACK:</LI>
+					<UL>
+						<LI>Increment the sequence number.</LI>
+					</UL>
+				</UL>
+				<LI>Otherwise:</LI>
+				<UL>
+					<LI>Drop the segment and stop.</LI>
+				</UL>
+				<LI>If the ACK number in the received TCP header is 1 more than the connection's sequence number:</LI>
+				<UL>
+					<LI>Increment the connection's sequence number.</LI>
+					<LI>Pop out the last sent segment in buffer.</LI>
+					<LI>If there are more segments in buffer:</LI>
+					<UL>
+						<LI>Send the next segment.</LI>
+					</UL>
+				</UL>
+				<LI>If the TCP header is not an empty ACK:</LI>
+				<UL>
+					<LI>Send an ACK.</LI>
+				</UL>
+				<LI>If this is a duplicate segment:</LI>
+				<UL>
+					<LI>Drop segment and stop.</LI>
+				</UL>
+			</UL>
+			<LI>If the connection is in LISTEN state:</LI>
+			<UL>
+				<LI>Start a new connection.</LI>
+				<LI>Send a SYN + ACK.</LI>
+				<LI>Set the new connection's state to SYN_RECEIVED.</LI>
+			</UL>
+			<LI>If the connection is in SYN_SENT state:</LI>
+			<UL>
+				<LI>If the TCP header is a SYN + ACK:</LI>
+				<UL>
+					<LI>Send an ACK.</LI>
+					<LI>Set the connection's state to ESTABLISHED.</LI>
+				</UL>
+			</UL>
+			<LI>If the connection is in SYN_RECEIVED state:</LI>
+			<UL>
+				<LI>If the TCP header is an ACK:</LI>
+				<UL>
+					<LI>Set the connection's state to ESTABLISHED.</LI>
+				</UL>
+			</UL>
+			<LI>If the connection is in ESTABLISHED state:</LI>
+			<UL>
+				<LI>If the TCP header's PUSH flag is set:</LI>
+				<UL>
+					<LI>Send the data to the higher layer.</LI>
+				</UL>
+				<LI>Otherwise, buffer the data.</LI>
+			</UL>
+			<LI>If the connection is in FIN_WAIT_1 state:</LI>
+			<UL>
+				<LI>If the TCP header is a FIN:</LI>
+				<UL>
+					<LI>Set the connection's state to CLOSING.</LI>
+				</UL>
+				<LI>If the TCP header is an ACK:</LI>
+				<UL>
+					<LI>Set the connection's state to FIN_WAIT_2.</LI>
+				</UL>
+			</UL>
+			<LI>If the connection is in FIN_WAIT_2 state:</LI>
+			<UL>
+				<LI>If the TCP header is a FIN:</LI>
+				<UL>
+					<LI>Set the connection's state to TIMED_WAIT.</LI>
+				</UL>
+			</UL>
+			<LI>If the connection is in LAST_ACK state:</LI>
+			<UL>
+				<LI>If the TCP header is an ACK:</LI>
+				<UL>
+					<LI>Set the connection's state to CLOSED.</LI>
+				</UL>
+			</UL>
+			<LI>If the connection is in CLOSING state:</LI>
+			<UL>
+				<LI>If the TCP header is an ACK:</LI>
+				<UL>
+					<LI>Set the connection's state to TIMED_WAIT.</LI>
+				</UL>
+			</UL>
+		</UL>
+	</body>
+</html>

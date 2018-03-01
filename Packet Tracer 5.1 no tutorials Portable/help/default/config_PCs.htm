@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Configuring PCs</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+
+
+<p class="MainHeading1">
+  
+  Configuring PCs
+<hr>
+
+<p>You can configure the global settings and interface settings on the PC with the <strong>Config</strong> tab. Additionally, the <strong>Desktop</strong> tab provides tools to configure IP settings, configure dial-up settings, use a terminal window, open a host command line interface, open a web browser, and configure Linksys wireless settings.</p>
+<p class="myPic">
+<img src="images/config_PCs_1.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Global Settings</p>
+<p>In the global settings, you can change the <strong>Display Name</strong> of the PC. You may set the PC to either automatically obtain IPv4 or IPv6 configurations with <strong>DHCP</strong> or manually set the <strong>Gateway</strong> and <strong>DNS Server</strong> with <strong>Static</strong>. For IPv6, <strong>Auto Config</strong> will automatically configure the Gateway and DNS Server IP addresses.</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Interface Configuration</p>
+<p>PCs can support Ethernet (copper or fiber), modem, or wireless interfaces. In general, you can set the interface <strong>Port Status</strong>, <strong>Bandwidth</strong>, <strong>Duplex</strong>, <strong>MAC Address</strong>, <strong>IP Address</strong>, <strong>Subnet Mask</strong>, <strong>Link Local Address</strong>, and <strong>IPv6 Address</strong>. These options vary slightly for each interface type.</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">IP Configuration Utility</p>
+<p>In the <strong>Desktop</strong> tab, click the <strong>IP Configuration</strong> icon to bring up this utility. If the PC is connected to a <strong>DHCP</strong> configured router or server, you can use DHCP to automatically obtain IP configurations. Otherwise, you may manually set IP configurations with <strong>Static</strong>.</p>
+<p class="myPic">
+<img src="images/config_PCs_2.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Modem Dial-up Utility</p>
+<p class="myList">In the <strong>Desktop</strong> tab, click the <strong>Dial-up</strong> icon to bring up this utility. You can establish a modem connection by connecting the PC to a cloud that is connected to a router. The cloud acts like a phone company between the PC and the router. Several conditions must be met before the connection can be successful: </p>
+<p class="myList">&nbsp;</p>
+<ul>
+  <li>The router has a modem, and you have established user name authentication on the router (using the Cisco IOS global configuration mode command <strong>username WORD password LINE</strong>).</li>
+  <li>The modem ports on the cloud have valid phone numbers.</li>
+  <li>You entered the correct user name, password, and number to dial on the modem utility of the PC.</li>
+</ul>
+<p>If all the requirements are met, press the <strong>Dial</strong> button to make the call. The status line (as well as link lights) will tell you if the connection is successful. Note that you still must configure all relevant IP settings manually if you want to ping between the PC and the router. Use the <strong>Disconnect</strong> button to terminate the connection at any time.</p>
+<p class="myPic">
+<img src="images/config_PCs_3.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Terminal Utility</p>
+<p>If the PC is connected to a router or a switch via a console connection (via the <strong>RS 232</strong> port on the PC), use the <strong>Terminal</strong> application to gain access to the CLI of the device. In the Desktop tab, click the Terminal icon to bring up this utility. Choose the appropriate port configuration parameters for the console session, and then click on the <strong>OK</strong> button. The <strong>Terminal</strong> window appears with the CLI of the device.</p>
+<p class="myPic">
+<img src="images/config_PCs_4.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Command Prompt Utility</p>
+<p>In the <strong>Desktop</strong> tab, click the <strong>Command Prompt</strong> button to bring up the command prompt. In the prompt, you can issue the following commands:</p>
+<table class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+		<li><strong>?</strong></li>
+		<li><strong>arp</strong></li>
+		<li><strong>help</strong></li>
+		<li><strong>ipconfig</strong></li>
+		<li><strong>ipv6config</strong></li>
+		<li><strong>netstat</strong></li>
+		<li><strong>ping</strong></li>
+		<li><strong>ssh</strong></li>
+		<li><strong>telnet</strong></li>
+		<li><strong>tracert</strong></li>
+    </ul></td>
+  </tr>
+</table>
+<p class="myPic">
+<img src="images/config_PCs_5.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">Web Browser Utility</p>
+<p>In the <strong>Desktop</strong> tab, click the <strong>Web Browser</strong> button to bring up the web browser. The web browser allows you to access a server or the Linksys Web Configuration. If the PC is directly or indirectly connected to a server with HTTP service enabled, you can type in the domain name or IP address of the server to access the website on the server. If the PC is connected to a Linksys WRT300N wireless router, you can type in the IP address of the Linksys WRT300N wireless router to access the Linksys Web Configuration. A prompt will appear asking for user name and password (default admin for both user name and password).</p>
+<p class="myPic">
+<img src="images/config_PCs_6.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">PC Wireless Utility</p>
+<p>In the <strong>Desktop</strong> tab, click the <strong>PC Wireless</strong> button to bring up the wireless client software. Note that the Linksys-WMP300N wireless hardware module is required for access. In the Linksys wireless client software, you can check <strong>Link Information</strong> to view wireless network status and statistics, <strong>Connect</strong> to any available Linksys wireless networks within range, and add/edit/delete <strong>Profiles</strong> to connect to wireless routers not broadcasting their SSID.</p>
+<p class="myPic">
+<img src="images/config_PCs_7.jpg">
+</p>
+</body>
+</html>

@@ -1,0 +1,2417 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Assessment Items</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+
+</head>
+	<body>
+
+<p class="MainHeading1">Assessment Items</p>
+<hr>
+<p class="MainHeading2">What are Assessment Items?</p>
+<p>The assessment items are found in the Assessment Items tab of the Answer Network section in the Activity Wizard.
+<p>Most configurations in the answer network have corresponding assessment items. To assess certain items, place a check mark next to the item. The default behavior is to compare the student network configuration to what is defined in the answer network configuration. For more advanced activities, the assessment items can be replaced with a variable. In this case, the student network configuration is compared with the value defined in the variable.
+
+<p class="MainHeading2">How to Add Variables to the Items</p>
+<p>Variables can only replace existing configured values. Not all configured values can be replaced. Only items with a green dot  can be  replaced with a variable.
+
+<p>There are two options for replacing a configured value with a variable:<br>
+  Option 1: Use the Variable Manager interface, click on  &lt;--<br>
+  Option 2: Single click on the assessment item. A text field will  pop up; replace the text with a variable.</p>
+<p class="MainHeading2">Assessment Items and Values:</p>
+<p>Assessment items that can be replaced with a variable have types. The value of the variable must conform to the following  rules:</p>
+<p>Boolean: Less than or equal to 0 is false. Greater than or  equal to 1 is true.<br>
+  Enum: A number represents the value; use the table below to  find the value.<br>
+  Numbers: A decimal (base 10) number.<br>
+  IP Addresses: Must follow this format: 192.168.1.1; all digits between 0 and 255.<br>
+  MAC Addresses: Must follow this format: ABCD.ABCD.ABCD; all digits must be hexadecimal. <br>
+  Strings: Any regular string.<br>
+  Special: These are specially formatted strings that must  adhere to the format shown below.</p>
+<p class="MainHeading2">Definition of Assessment Items and Values</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Cisco    Device</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Host Name</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Startup Config</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Config-Register</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Banner MOTD</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Banner LOGIN </td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Enable Password</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Service Password Encryption</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Clock Timezone</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">VTY Lines</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Boot System Files</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;system file&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Flash Files</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;flash file names&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Static MAC </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;static macs&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;mac&gt; &lt;portName&gt; &lt;vlanID&gt; </td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;IP Domain Names&gt; </td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Cloud    Device</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Frame-Relay Connections</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;Connection Node&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DSL Connections</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;DSL Connections&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Cable Connections</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;Cable Connections&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>All    Devices</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="50%"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;DeviceName&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Power</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;Ports&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>PC </strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="50%"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Gateway</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DNS Server </td>
+    <td>yes</td>
+    <td>IP Address </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Routers</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">User Names</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;User Name Password Pair&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td width="400">&lt;username&gt;-&lt;password&gt;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Switches</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">VLANS</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;VlanNumber&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">VLAN Name</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;Vlan Name&gt; </td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Gateway</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Terminal    Line Devices</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Enable Secret</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Linksys</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Internet Connection</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">Dhcp = 0, 1=PPPoE, 2=Static</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Router IP</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Ports</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Gateway</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DNS Server    IP </td>
+    <td>yes</td>
+    <td>IP Address </td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Wireless Security Mode</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0 = None, 1=WEP</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Single Port Forwarding</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;Nat Entry Name&gt; </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Password</td>
+    <td>yes</td>
+    <td>String</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Remote Management</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Cloud    Pots Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Phone Number</td>
+    <td>&nbsp;</td>
+    <td>Special</td>
+    <td width="400">&lt;areacode&gt;&lt;prefix&gt;&lt;number&gt;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Cloud    Serial Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Frame Relay</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">LMI Type</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0 = Ansi, 1= Cisco, 2 = Q933a</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Sublinks</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;sublink name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Frame Relay Sub-Interface Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="234" height="17"><strong>Name</strong></td>
+    <td><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">DLCI</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;DLCI Number &gt;</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Type (Point-to-Point/ MultiPoint)</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = Multipoint,  PointToPoint = 1</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;PortName&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Port Status </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Bandwidth</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Duplex</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">MAC Address</td>
+    <td>yes</td>
+    <td>Mac Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Clock Rate</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Description</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Type</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0=Copper, 1=Fiber, 2=Serial, 3=SmartSerial, 4=PhoneLine, 5=OmniDirectional Wireless, 6=Coaxial </td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;Link to Device&gt; </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;Connects To&gt; </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17"> Type</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0=Copper, 1=Fiber, 2=Serial, 3=SmartSerial, 4=PhoneLine, 5=OmniDirectional Wireless, 6=Coaxial </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Host    Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Address</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Subnet Mask</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IPv6 Enable </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Auto Config </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Link Local </td>
+    <td>yes</td>
+    <td>IPv6 Address </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IPv6 Address </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Type</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Prefix</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Router    Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Access-group In</td>
+    <td>yes</td>
+    <td>String</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Access-group Out</td>
+    <td>yes</td>
+    <td>String</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">CDP Enabled</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">NAT Mode</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0 = None,  1 = NatInside,  2 = eNatOutside</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Bandwidth Info</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Delay</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">EIGRP Hello Interval</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;AS Number&gt;          </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">EIGRPv6 Hello Interval</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;AS Number&gt;       </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">RIP Split Horizon</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">RIPv6</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">EIGRPv6</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">EIGRPv6 Summary Addresses</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;Summary Address&gt;     </td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;NetworkAddress&gt;/&lt;Mask&gt;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">EIGRP Summary Addresses</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;Summary Address&gt; </td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;NetworkAddress&gt; &lt;Mask&gt; &lt;AdminDistance&gt; </td>
+  </tr>
+  <tr height="17">
+    <td height="17">Autonomous System</td>
+    <td>&nbsp;</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Authentication</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0=None, 1=Simple, 2=MD5, 3=Default </td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Authentication Key</td>
+    <td>yes</td>
+    <td>String</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Cost</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Dead-Interval</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Hello-Interval</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Message Digest Key</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;md5 key&gt; </td>
+    <td>yes</td>
+    <td>String</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Priority</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPF Network Type </td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = Point to Point, 1 = Broadcast, 2 = Non-Broadcast, 3 = Point to Multipoint, 4 = Loopback, 5 = Not Set </td>
+  </tr>
+  <tr height="17">
+    <td height="17">Keepalive</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Encapsulation</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0=Cisco, 1=IETF, 2=Default </td>
+  </tr>
+  <tr height="17">
+    <td height="17">      Keepalive</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">PPP</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Authentication</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0 = No Authentication, 1 = Chap, 2 = Pap, 3 = PapChap, 4 = ChapPap</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Frame Relay</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     Encapsulation Type</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0 = Cisco, 1 = IETF,  2 = Default</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     LMI Type</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td width="400">0 = Ansi,  1 = Cisco,  2 = Q933a</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Maps</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;StaticMaps&gt;         </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">802.1Q</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">  VLAN ID </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">  Native VLAN</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="400">&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Helper Address </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    &lt;helperAddresses&gt;  </td>
+    <td>yes</td>
+    <td>IP Address </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">OSPFv6</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Process ID </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     Area ID</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Instance ID </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Priority</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Dead Interval </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Hello interval </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Cost</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Route Cef </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Switch    Port</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Port Mode</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Access VLAN</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Native VLAN</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Trunk VLANs</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Voice Vlan</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Nonegotiate</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Dynamic Mode</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = Dynamic Desirable, 1 = Dynamic Auto,     2 = Operation Trunk, 3 = Operation Access</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Terminal    Line</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">RS232</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;VTY Line&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Console Line</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Speed</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Data Bits</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Parity</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = Even,  1 = Mark,  2 = None,     3 = Odd,  4 = Space</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Stop Bits</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Flow Control</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = None,  1 = Hardware,  2 = Software</td>
+  </tr>
+  <tr height="17">
+    <td height="17">History Size</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">MOTD Banner</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Login</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = No Login,  1 = Login,  3 = Login Local</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Password</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Session Limit</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Access Control In</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Access Control Out</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Terminal Line timed out </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Logging Sync </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Transport Input </td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = None, 1 = Telnet, 2 = SSH, 0xFFFFFFFF=All </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Routes</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Routes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Static Routes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;static route&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;destinationPrefix&gt;-&lt;destinationPrefixBits&gt;-&lt;forwardRoutersIP&gt;-&lt;metric&gt;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Networks</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;default network&gt;</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Routing </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Routesv6 </strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Routes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Static Routes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;static route&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;destinationPrefix&gt;-&lt;destinationPrefixBits&gt;-&lt;forwardRoutersIP&gt;-&lt;metric&gt;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Networks</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;default network&gt;</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Routing </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IPv6 Unicast Routing </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>RIP</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Version</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Auto Summary</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Information Originate</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Timers Basic</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Networks</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">      &lt;network address&gt;</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Passive Interface</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;PortName&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Default</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Redistribution</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;redistributionEntry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>RIPv6</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Redistribution</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;redistributionEntry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Shutdown</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Distance</td>
+    <td>Yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>EIGRP</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;Autonomous System #&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Auto Summary</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Networks</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;network address String&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;networkNumber&gt; &lt;eigrpWildcardBits&gt;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Passive Interface</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;PortName&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Default</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Metrics</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Variance</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Redistribution</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;redistributionEntry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>EIGRPv6</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;Autonomous System #&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Auto Summary</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Metrics</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Router ID </td>
+    <td>yes</td>
+    <td>IP Address </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Shutdown</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>OSPF</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;Process ID&gt; </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Area Authentication</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Area</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">           &lt;Area ID&gt; </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Area Status </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Area Default Cost </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Virtual Link</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">              &lt;VirtualLinkID&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Information Originate</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = No Default Info Originate, 1 = Default Info Originate,  2 = Default Info Originate Always</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Log Adjacency Changes</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = No Log Change, 1 = Log Change,     2 = Log Change Detail</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Passive Interface</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Default</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Networks</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;route String&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;networkNumber&gt; &lt;OSPFWildcardMask&gt; &lt;areaIdNumber&gt;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Redistribution</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;redistributionEntry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>OSPFv6</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;Process ID&gt; </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Area Authentication</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Area</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">           &lt;Area ID&gt; </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Area Status </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Area Default Cost </td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Virtual Link</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">              &lt;VirtualLinkID&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Information Originate</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = No Default Info Originate, 1 = Default Info Originate,  2 = Default Info Originate Always</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Log Adjacency Changes</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = No Log Change, 1 = Log Change,     2 = Log Change Detail</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Passive Interface</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Default</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Redistribution</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       &lt;redistributionEntry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>Port    Security</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Static MACs</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">          &lt;mac address&gt;</td>
+    <td>yes</td>
+    <td>Mac Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Maximum Static MACs</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Enabled</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Port Security Violation</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = Shutdown, 1 = Protect, 2 = Restrict </td>
+  </tr>
+  <tr height="17">
+    <td height="17">Sticky Enabled </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>CDP</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">CDP Enabled</td>
+    <td>&nbsp;</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>ACL</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;ACL Name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>ACLv6</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;ACL Name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>DHCP    Pool</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">&lt;PoolName&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DNS server IP</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Pool IPs </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>DHCP    Server</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17"> Enabled</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Start IP Address</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Max User</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Default Gateway</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DNS </td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DHCPv6 Pools</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Excluded Addresses</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;addresses&gt;</td>
+    <td>yes</td>
+    <td>Special</td>
+    <td>&lt;startIP&gt; &lt;endIP&gt; </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>DHCPv6    Server</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17"> Enabled</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">DNS Server IP</td>
+    <td>yes</td>
+    <td>IPv6 Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Pools</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Domain Name </td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Prefix Delegations </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       DUID</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Preferred Lifetime </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">       Valid Lifetime </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Local Pools </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Prefix</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Prefix Length </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">    Sub Prefix Length </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="64" span="2">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>NAT</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Pools</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;pool name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Inside Source List</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;list number&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Inside Source Static</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;static entry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">
+  <col width="64" span="2">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>NATv6</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">Pools</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;pool name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Inside Source List</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;list number&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Inside Source Static</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;static entry&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>STP</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">VLANs</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;Vlan Number&gt;</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Priority</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">STP Mode </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">RSTP Mode </td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>HTTP    Server</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">HTTP Enable</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>VTP</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">VTP</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Domain Name</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">VTP Mode</td>
+    <td>yes</td>
+    <td>Enum</td>
+    <td>0 = VtpServer, 1 = VtpClient,  2 =    VtpTransparent</td>
+  </tr>
+  <tr height="17">
+    <td height="17">VTP Password</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">VTP Version</td>
+    <td>yes</td>
+    <td>Number</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>TFTP Server </strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">TFTP Enable</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>DNS    Client</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Domain-Lookup</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Name Server</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IP Host</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17"> Host &lt;ipaddress&gt;</td>
+    <td>yes</td>
+    <td>IP Address</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17"><p>IPv6 Name Server </p>    </td>
+    <td>yes</td>
+    <td>IPv6 Address </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">IPv6 Host</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+  <col width="180">
+  <col width="54">
+  <col width="84">  <col width="400">
+  <tr height="17">
+    <td height="17" colspan="4"><strong>DNS    Server</strong></td>
+  </tr>
+  <tr height="17">
+    <td width="180" height="17"><strong>Name</strong></td>
+    <td width="54"><strong>Variable</strong></td>
+    <td width="84"><strong>Type</strong></td>
+    <td width="400"><strong>Comment</strong></td>
+  </tr>
+  <tr height="17">
+    <td height="17">DNS Enable</td>
+    <td>yes</td>
+    <td>Boolean</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">Domain Name</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr height="17">
+    <td height="17">     &lt;name&gt;</td>
+    <td>yes</td>
+    <td>String</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" border="1">
+      <col width="180">
+      <col width="54">
+      <col width="84">
+      <col width="400">
+      <tr height="17">
+        <td height="17" colspan="4"><strong>SSH    Server</strong></td>
+      </tr>
+      <tr height="17">
+        <td width="180" height="17"><strong>Name</strong></td>
+        <td width="54"><strong>Variable</strong></td>
+        <td width="84"><strong>Type</strong></td>
+        <td width="400"><strong>Comment</strong></td>
+      </tr>
+      <tr height="17">
+        <td height="17">SSH Server Version </td>
+        <td>yes</td>
+        <td>Enum</td>
+        <td>0 = Default, 1 = Version One, 2 = Version Two </td>
+      </tr>
+    </table>
+	<p>&nbsp;</p>
+	<table cellspacing="0" cellpadding="0" border="1">
+      <col width="180">
+      <col width="54">
+      <col width="84">
+      <col width="400">
+      <tr height="17">
+        <td height="17" colspan="4"><strong>Nd</strong></td>
+      </tr>
+      <tr height="17">
+        <td width="180" height="17"><strong>Name</strong></td>
+        <td width="54"><strong>Variable</strong></td>
+        <td width="84"><strong>Type</strong></td>
+        <td width="400"><strong>Comment</strong></td>
+      </tr>
+      <tr height="17">
+        <td height="17">NDV6</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr height="17">
+        <td height="17">Neighbors</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr height="17">
+        <td height="17">IPv6 Address </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr height="17">
+        <td height="17">Mac Address </td>
+        <td>yes</td>
+        <td>Mac Address </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+	</body>
+</html>

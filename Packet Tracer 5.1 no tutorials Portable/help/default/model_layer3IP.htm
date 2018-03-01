@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Layer 3 IP Models</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+
+<p class="MainHeading1">Layer 3 IP Models</p>
+<hr>
+<p class="MainHeading2">How IP and IPv6 are modeled</p>
+<P class=myList>Packet Tracer 5.1 models only certain aspects of IP.</P>
+<P class=myList>&nbsp;</P>
+<UL>
+  <LI>IP version 4 is modeled.
+  <LI>IP addresses are 32 bits long, and displayed using the dot-decimal
+  notation, where each octet or byte of the IP address is displayed in decimal
+  number and separated by a dot.
+  <LI>All class A, B, and C addresses (1.0.0.0 to 224.255.255.255) except
+  loopback addresses (127.0.0.0 to 127.255.255.255) can be assigned to ports.
+  <LI>All IP packet fields are displayed in the PDU details.&nbsp; However, only
+  the following four fields are used: Destination IP Address, Source IP
+  Address, TTL, and Protocol.&nbsp;
+  <LI>The Protocol field in the IP packet identifies the layer 4 PDU.&nbsp;When
+  a device sends an IP packet, it places the value corresponding to the layer 4
+  process or service in the Protocol field.&nbsp;When a device receives an IP
+  packet, it dispatches the layer 4 PDU to a process or service corresponding to
+  the value of the Protocol field.</LI></UL>
+<P class=myList>&nbsp;</P>
+<P class=myList>Packet Tracer 5.1 also models  IPv6.</P>
+<P class=myList>&nbsp;</P>
+<UL>
+  <LI>IP addresses are 128 bits long, and displayed as eight groups of four hexadecimal digits separated by colons.
+  <LI>There are no classes of addresses in IPv6.   Each address assignment has an address and a prefix in the format with / followed by the prefix length of the network.
+  <LI>All IPv6 packet fields are displayed in the PDU details.&nbsp; However, only
+    the following four fields are in used: Destination IPv6 Address, Source IPv6
+    Address, Hop Limit, and Next Header.&nbsp;
+  <LI>The Next Header field in the IPv6 packet identifies the layer 4 PDU or the next option in the IPv6 header.&nbsp;When
+    a device sends an IPv6 packet, it places the value corresponding to the layer 4
+    process or service in the Next Header field.&nbsp;When a device receives an IPv6
+    packet, it dispatches the layer 4 PDU or the IPv6 header to a process or service corresponding to
+    the value of the Next Header field.</LI>
+</UL>
+<P>&nbsp;</P>
+<P class=MainHeading2>How devices process incoming ICMP packets</P>
+<p class="myList">When a device receives an ICMP packet:</p>
+<p class="myList">&nbsp;</p>
+<ul>
+    <li>It checks the ICMP message contained in the packet.
+      <ul>
+        <li>If the packet contains the message "TTL Exceeded" or "Echo Reply:"
+          <ul>
+            <li>It checks to see if it has recently sent an ICMP message with the same identification as the received ICMP message.
+              <ul>
+                <li>If so, it sends out the ICMP.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+  </li>
+    </ul>
+<p>&nbsp;</p>
+<p><span class="MainHeading2">How devices process incoming ICMPv6 packets</span></p>
+<p>ICMPv6 works similar to ICMP for Echo, Echo Reply, Hop Limit Expire (TTL Expire), Unreachable messages. For Neighbor Discovery (ND) messages, ICMPv6 process sends them to the ND process. Refer to ND process for more details.</p>
+<p>&nbsp;</p>
+<p class=MainHeading2>How ND for  IPv6 processes incoming packets</p>
+<p>When an ND process for  IPv6 receives a packet (<A href="flowcharts/DeviceReceiveND.jpg" target="_blank">flowchart</A> here):</p>
+<ul>
+  <li>If the packet is a Neighbor Solicitation, the       process executes the following actions:
+      <ul>
+        <li>It will drop the packet if it doesn’t contain a        Link Layer option.</li>
+        <li>If the destination IPv6 address doesn’t match        with the receiving interface’s IPv6 address:
+            <ul>
+              <li>If there is an entry already exists in the ARP         table, the entry will be updated with the information in the packet.</li>
+            </ul>
+        </li>
+        <li>If matched,
+            <ul>
+              <li>If the host device is not a switch, the process         will update the ARP table with information from the packet (source IPv6         address, source MAC address).</li>
+              <li>Then ND process creates an ARP Reply packet         that contains its MAC address and sends to the source device.</li>
+            </ul>
+        </li>
+      </ul>
+  </li>
+  <li>If the packet is a Neighbor Advertisement, the       process executes the following actions:
+      <ul>
+        <li>It will drop the packet if it meets any of the        following conditions:
+            <ul>
+              <li>It does not contain a Link Layer option.</li>
+              <li>It has not sent an ARP request but received an         ARP reply</li>
+            </ul>
+        </li>
+        <li>Otherwise, it will do the following actions:
+            <ul>
+              <li>The device’s ARP process will updates the ARP         table with the received information.</li>
+              <li>If         there are buffers contained in the received packet, the ARP process         takes out these buffers and resends them.</li>
+            </ul>
+        </li>
+      </ul>
+  </li>
+  <li>It the       packet is a Router Solicitation, the process executes the following actions:
+      <ul>
+        <li>It        will drop the packet if the message is a not valid Router        Solicitation.  A valid Router        Solicitation message must meet the following conditions:
+            <ul>
+              <li>The         IP Hop Limit field has a value of 255.</li>
+              <li>ICMP         code is 0.</li>
+              <li>ICMP         length is 8 or more octets.</li>
+              <li>All         included options have a length that is greater than zero.</li>
+              <li>If         the IP source address is the unspecified address, there is no source         link-layer address option in the message.</li>
+            </ul>
+        </li>
+        <li>If        the packet is a valid Router Solicitation, it will create a Router        Advertisement and multicast it to the all-nodes group.</li>
+      </ul>
+  </li>
+  <li>If the       packet is a Router Advertisement, the process executes the following actions:
+      <ul>
+        <li>It        cancels any existing router solicitation timer scheduled on the receiving        interface.</li>
+        <li>It        retrieves information from the Router Advertisement such as source IPv6        address, prefix and prefix length, and with the receiving interface’s        local link address, it creates an IPv6 address.
+            <ul>
+              <li>If         the Router Advertisement’s prefix option is on-link, the ND process sets         the newly created IPv6 address to the receiving interface.</li>
+              <li>If         the Router Advertisement’s prefix option is off-link, the ND process         removes the IPv6 address from the receiving interface.</li>
+            </ul>
+        </li>
+      </ul>
+  </li>
+  </ul>
+</body>
+</html>

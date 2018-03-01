@@ -1,0 +1,516 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Layer 7 Models</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+		<p class="MainHeading1">Layer 7 Models</p>
+		<hr>
+		<p class="MainHeading2">How DHCP clients process incoming packets</p>
+		<p class="myList">When a DHCP client device receives a packet:</p>
+		<p class="myList">&nbsp;</p>
+		<ul>
+			<li>
+				It drops the packet if (any):
+				<ul>
+					<li>
+					The packet is not a valid DHCP packet.
+					<li>
+						The packet's destination MAC address does not match its own MAC address.</li>
+				</ul>
+			<li>
+				It checks the packet's DHCP type (its DHCP message).
+				<ul>
+					<li>
+					If the packet is a DHCP-OFFER packet, it uses the information in the packet
+					(including client IP address, offered IP address, server IP address, and
+					gateway address) to construct a DHCP-REQUEST packet and sends it back to the
+					server.
+					<li>
+					If the packet is a DHCP-ACK packet, it gets the IP address, subnet mask, and
+					the gateway IP address from the packet and sets its IP address configuration
+					accordingly.
+					<li>
+						If the packet is not a DHCP-OFFER or a DHCP-ACK packet, it will drop the
+						packet.</li>
+				</ul>
+			</li>
+		</ul>
+		<p class="myList">&nbsp;</p>
+		<p class="MainHeading2">How DHCP servers process incoming packets</p>
+		<p class="myList">When a DHCP server device receives a packet:</p>
+		<p class="myList">&nbsp;</p>
+		<ul>
+			<li>
+				It drops the packet if:
+				<ul>
+					<li>
+						The packet is not a valid DHCP packet.</li>
+				</ul>
+			<li>
+				It checks the packet's DHCP type (its DHCP message).
+				<ul>
+					<li>
+						If the packet is a DHCP-DISCOVER packet:</li>
+					<UL>
+						<LI>
+							If the client already has&nbsp;a lease:</LI>
+						<UL>
+							<LI>
+								Send a DHCP-OFFER packet with the associated IP to the client.</LI>
+						</UL>
+						<LI>
+							If the client does not already have a lease:</LI>
+						<UL>
+							<LI>
+								If there is an available IP address:</LI>
+							<UL>
+								<LI>
+									Send a DHCP-OFFER packet with the available IP address to the client.</LI>
+							</UL>
+							<LI>
+								Otherwise, drop the packet and stop.</LI>
+						</UL>
+					</UL>
+					<li>
+						If the packet is a DHCP-REQUEST packet:</li>
+					<UL>
+						<LI>
+							If the requested IP address is available:</LI>
+						<UL>
+							<LI>
+							Send a DHCP-ACK packet with the available IP address to the client.
+							<LI>
+								Bind the client to the IP address.</LI>
+						</UL>
+						<LI>
+							Otherwise, drop the packet and stop.</LI>
+					</UL>
+					<LI>
+						If the packet is a DHCP-RELEASE packet:</LI>
+					<UL>
+						<LI>
+							If the client is bound to the IP address:</LI>
+						<UL>
+							<LI>
+								Unbind the IP address and the client.</LI>
+						</UL>
+						<LI>
+							Otherwise, drop the packet and stop.</LI>
+					</UL>
+					<li>
+						If the packet is a DHCP-OFFER or a DHCP-ACK packet, drop the packet.</li>
+			    </ul>
+		  </li>
+    </ul>
+		<p>&nbsp;</p>
+		<p class="MainHeading2">How DHCP for  IPv6 clients process incoming packets</p>
+		<p>When a DHCP for IPv6  client device receives a packet (<A href="flowcharts/ClientReceiveDHCPv6.jpg" target="_blank">flowchart</A> here):</p>
+		<ul>
+		  <li>It       drops the packet if (any):
+		    <ul>
+		      <li>The        packet is a Solicit message. </li>
+		      <li>The        packet is an Advertise message that meets any of the following        conditions:
+		          <ul>
+		            <li>The         message does not include a Server Identifier option.</li>
+		            <li>The         message does not include a Client Identifier option.</li>
+		            <li>The         content of the Client Identifier option does not match the client’s         DUID.</li>
+		            <li>The         “transaction-id” field does not match the value the client used in its         Solicit message.</li>
+	            </ul>
+	          </li>
+		      <li>The        packet is a Request message.</li>
+		      <li>The        packet is a Reply message that meets any of the following conditions:
+		          <ul>
+		            <li>The         message does not include a Server Identifier option.</li>
+		            <li>The         “transaction-id” field does not match the value used in the original         message.</li>
+	            </ul>
+	          </li>
+	        </ul>
+	      </li>
+		  <li>It       checks the packet's DHCP type (its DHCP message).
+		    <ul>
+		      <li>If        the packet is an Advertise message, it will do the following actions:
+		          <ul>
+		            <li>It         terminates retransmission of its Solicit message.</li>
+		            <li>It         sends a Request message to the DHCP server that the Advertise message         was sent from.</li>
+	            </ul>
+	          </li>
+		      <li>If        the packet is a Reply message, it gets the prefix and prefix length from        the message and combines with its received interface’s local link address        to create an IPv6 address and subnet mask.  It also retrieves the gateway IPv6 address        from the packet.  Then the client        sets its IPv6 address configuration accordingly. &nbsp;</li>
+	        </ul>
+	      </li>
+    </ul>
+		<p>&nbsp;</p>
+	<p class="MainHeading2">How DHCP for  IPv6 servers process incoming packets</p>
+		<p>When a DHCP for IPv6  server device receives a packet (<A href="flowcharts/ServerReceiveDHCPv6.jpg" target="_blank">flowchart</A> here):</p>
+		<ul>
+		  <li>It       drops the packet if:
+		    <ul>
+		      <li>The        packet is a Solicit message that meets any of the following conditions:
+		          <ul>
+		            <li>The         message does not include a Client Identifier option.</li>
+		            <li>The         message does not include a Server Identifier option.</li>
+	            </ul>
+	          </li>
+		      <li>The        packet is an Advertise message.</li>
+		      <li>The        packet is a Request message that meets any of the following conditions:
+		          <ul>
+		            <li>The         message does not include a Server Identifier option</li>
+		            <li>The         content of the Server Identifier option does not match the server’s         DUID.</li>
+		            <li>The         message does not include a Client Identifier option.</li>
+	            </ul>
+	          </li>
+		      <li>The        packet is a Reply message.</li>
+	        </ul>
+	      </li>
+		  <li>It       checks the packet's DHCP type (its DHCP message).
+		    <ul>
+		      <li>If        the packet is a Solicit message, it uses the information in the packet and        its server configuration to construct an Advertise message and sends it        back to the client. </li>
+		      <li>If        the packet is a Request message, it uses the information in the packet        and its prefix pool configuration to construct a Reply message and sends        it back to the client.</li>
+	        </ul>
+	      </li>
+    </ul>
+		<p>&nbsp;</p>
+	<p class="MainHeading2">How TELNET client processes work</p>
+		<ul>
+			<li>
+				TELetype NETwork is a network protocol that utilizes TCP/IP protocol stack to
+				establish a client/server connection. The user starts a TELNET client process
+				on a PC or a Cisco device using telnet command with server IP address. The
+				TELNET server usually listens on TCP port 23 and awaits client connection
+				requests. A TELNET packet is generated from the client process when a key is
+				pressed.</li>
+		</ul>
+		<p class="myList">&nbsp;</p>
+		<p class="myList">When a TELNET client receives a packet (<A href="flowcharts/TELNETClientReceivePacket.jpg" target="_blank">flowchart</A>
+			here):</p>
+		<p class="myList">&nbsp;</p>
+		<ul>
+			<li>
+			If the packet is not a valid TELNET packet, it drops the packet.
+			<li>
+				Otherwise, it writes the received information stored in the packet onto the
+				screen.
+			</li>
+		</ul>
+		<p class="myList">&nbsp;</p>
+		<p class="MainHeading2">How TELNET server processes work</p>
+		<ul>
+			<li>
+				TELetype NETwork is a network protocol that utilizes TCP/IP protocol stack to
+				establish a client/server connection. The user starts a TELNET client process
+				on a PC or a Cisco device using telnet command with server IP address. The
+				TELNET server is started automatically on a Cisco router or switch. The server
+				listens on TCP port 23 awaiting client connection requests.
+			</li>
+		</ul>
+		<p class="myList">When a TELNET server receives a packet (<A href="flowcharts/TELNETServerReceivePacket.jpg" target="_blank">flowchart</A>
+			here):</p>
+		<p class="myList">&nbsp;</p>
+		<UL>
+			<li>
+			If the packet is not a valid TELNET packet, it drops the packet.
+			<LI>
+				Otherwise, it checks the packet and:
+				<UL>
+					<li>
+					If the information received is part of a command, it sends an echo back to the
+					client.
+					<li>
+					If the server is able to determine the command entered by the client, it sends
+					the result back to the client.
+					<li>
+						If the server does not understand the information received, it sends an error
+						message back to the client.</li>
+				</UL>
+			</LI>
+		</UL>
+		<P>&nbsp;</P>
+		<P class="MainHeading2">How SSH client processes work</P>
+	    <ul>
+	      <li>SSH client utilizes TCP/IP       protocol stack to establish a client/server connection. </li>
+	      <li>Before a SSH connection could       be established between client and server,       both need to have an RSA key pairs generated,       if the keys are not generated connection will be refused by the other       side.</li>
+	      <li>In order for the Cisco device       to generate RSA keys it needs to be configured with       hostname and IP domain name.</li>
+	      <li>The user starts a SSH client       process on a PC or a router using “ssh –l” (-l is for login) command with       the associated client’s user name which is already configured on the SSH       server, and IP address of the       SSH server. The SSH server,       usually listens on TCP port 22,       awaits client connection requests. A SSH packet is generated from the       client process when a key is pressed. </li>
+    </ul>
+	    <p>When a SSH client receives a packet:</p>
+	    <ul>
+	      <li>If the packet is not a valid       SSH packet, it drops the       packet. </li>
+	      <li>Otherwise, it writes the received the information stored       in the packet onto the screen. </li>
+    </ul>
+	    <p>&nbsp;</p>
+    <p class="MainHeading2">How SSH server processes work</p>
+	    <ul type="disc">
+          <li>SSH is a network protocol       that utilizes TCP/IP protocol stack and RSA key pairs to establish a       secure client/server connection. The user starts a SSH client process on a       PC or a Cisco device using ssh –l command with client’s associated user       name and also the server’s IP address. The SSH server is started automatically       on a Cisco router. The server listens on TCP port 22 awaiting client       connection requests. </li>
+    </ul>
+	    <p>When a SSH server receives a packet: </p>
+	    <ul>
+	      <li>If the packet is not a valid SSH       packet it drops the packet. </li>
+	      <li>If both client and server are       not configured with RSA keys the connection will be refused by SSH server.</li>
+	      <li>Otherwise, it checks the packet and:
+	        <ul>
+	          <li>If the username        received in the connection request packet is configured on the server it        will prompt the client for the password
+	              <ul>
+	                <li>Client will be         prompted for the correct password up to 3 times. If the password that         the client provides is not valid for the third time it will be         disconnected by the server.</li>
+                </ul>
+              </li>
+	          <li>If the information        received is part of a command,        it sends an echo back to the client. </li>
+	          <li>If the server is able        to determine the command entered by the client,        it sends the result back to the client. </li>
+	          <li>If the server does not        understand the information received,        it sends an error message back to the client.</li>
+            </ul>
+          </li>
+    </ul>
+        <p>&nbsp;</p>
+    <P class="MainHeading2">How DNS works</P>
+		<P class="myList">When DNS client needs to find the IP address of a domain name:</P>
+		<p class="myList">&nbsp;</p>
+		<ul>
+			<li>
+				If the DNS client is enabled on the client:
+				<UL>
+					<LI>
+					If DNS client finds the IP address of the domain in its cache it resolves the
+					domain address.
+					<LI>
+						DNS client constructs a query with the domain name and sends the query through
+						a DNS resolver to:
+						<UL>
+							<LI>
+							If the client is configured with a valid DNS server address, it constructs a
+							query with a unicast address.
+							<LI>
+								Otherwise, to a broadcast address.</LI>
+						</UL>
+					<LI>
+					DNS resolver sets a timer.
+					<LI>
+					If the received DNS response contains a resolved IP address for the queried
+					domain, then it stops the timer and the segment passes the DNS resolver process.
+					<LI>
+					If the received DNS response does not contain a resolved IP (invalid IP), it
+					drops the segment.
+					<LI>
+						If the DNS resolver does not receive any response packet and the timer expires:
+						  <UL>
+							<LI>
+							DNS resolver tries to resend the query up to 5 times.
+							<LI>
+								If the response is not received after 5 retries it gives up and sends a message
+								to the client that it did not find any IP address for the domain name.</LI>
+						</UL>
+					</LI>
+				</UL>
+			</li>
+		</ul>
+		<P class="myList">When a DNS server device receives a packet (<A href="flowcharts/DNSServerReceivePacket.jpg" target="_blank">flowchart</A>
+			here):</P>
+		<P class="myList">&nbsp;</P>
+		<UL>
+			<LI>
+				If the DNS service is enabled on the device and the received packet is a DNS
+				query:
+				<UL>
+					<LI>
+					If the DNS server finds a domain name in its database with the name in the
+					query packet, it constructs the response packet with the IP address and sends
+					it back.
+					<LI>
+						Otherwise it sends an empty response packet back to the sender.</LI>
+				</UL>
+			<LI>
+				Otherwise it drops the frame.</LI>
+		</UL>
+		<p class="myList">&nbsp;</p>
+		<P class="MainHeading2">How HTTP works</P>
+		<P class="myList">When a client needs to find a webpage from a server:</P>
+		<p class="myList">&nbsp;</p>
+		<UL>
+			<LI>
+			If the address is empty or starts with anything else other than http protocol
+			it drops the request since it is not supported in Packet Tracer 5.1
+			<LI>
+				If the address is an IP address or starts with http:// the HTTP client
+				processes it
+				<UL>
+					<LI>
+						The HTTP client first finds the server IP through the server name by parsing
+						the address in the address bar and:
+						<UL>
+							<LI>
+							If server name is not found it tries to resolve the domain name through a DNS
+							query.
+							<LI>
+								If server name is found it gets the IP address.</LI>
+						</UL>
+					<LI>
+						The HTTP client constructs a request HTTP segment and connects the server through
+						TCP sockets and starts a timer for its request.</LI>
+				</UL>
+			</LI>
+		</UL>
+		<P class="myList">When a HTTP client receives a packet (<A href="flowcharts/HTTPClientReceivePacket.jpg" target="_blank">flowchart</A>
+			here):</P>
+		<p class="myList">&nbsp;</p>
+		<UL>
+			<LI>
+			If the HTTP message has the HTTP OK code it fetches the page from the message
+			and displays the message
+			<LI>
+				Otherwise HTTP page displays an error page.</LI>
+		</UL>
+		<P class="myList">When HTTP server receives a request (<A href="flowcharts/HTTPServerReceiveRequest.jpg" target="_blank">flowchart</A>
+			here):
+		</P>
+		<P class="myList">&nbsp;</P>
+		<UL>
+			<LI>
+				If the HTTP service is enabled and a TCP connection with HTTP client is
+				established:
+				<UL>
+					<LI>
+						If the HTTP request is HTTP GET:
+						<UL>
+							<LI>
+								If the username and password in the HTTP request is not correct:
+								<UL>
+									<LI>
+										The server sends back an unauthorized error message to the client.</LI>
+								</UL>
+							<LI>
+								Otherwise:
+								  <UL>
+									<LI>
+										If the requested page exists on the server:
+										<UL>
+											<LI>
+												The server creates a response packet and sends back a HTTP reply to the client.</LI>
+										</UL>
+									<LI>
+										If the requesting page does not exist on the server:
+										<UL>
+											<LI>
+												The server sends back an error message to the client.</LI>
+										</UL>
+									</LI>
+								</UL>
+							</LI>
+						</UL>
+					<LI>
+						Other message codes are not supported in this version of PT and server drops
+						the packet.</LI>
+				</UL>
+			</LI>
+		</UL>
+		<P class="myList">&nbsp;</P>
+		<P class="MainHeading2">How TFTP servers process incoming packets</P>
+		<P class="myList">When a TFTP server receives a packet (<A href="flowcharts/TFTPServersProcessIncomingPackets.jpg" target="_blank">flowchart</A>
+			here):</P>
+		<P class="myList">&nbsp;</P>
+		<UL>
+			<LI>
+				If the packet is a READ request:
+				<UL>
+					<LI>
+						If the file with the requested name exists on the TFTP server:
+						<UL>
+							<LI>
+								Start a write session with the client.</LI>
+						</UL>
+					<LI>
+						If the file with the requested name does not exist on the TFTP server:
+						<UL>
+							<LI>
+								Send back a TFTP ERROR packet to the client.</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				If the packet is a WRITE request:
+				<UL>
+					<LI>
+						Start a read session with the client.</LI>
+				</UL>
+			<LI>
+				If the packet is anything else:
+				<UL>
+					<LI>
+						Drop the packet and stop.</LI>
+				</UL>
+			</LI>
+		</UL>
+		<P class="myList">&nbsp;</P>
+		<P class="MainHeading2">How TFTP servers and clients process incoming packets
+			during a session</P>
+		<P class="myList">When a TFTP server or client receives a packet during a session (<A href="flowcharts/TFTPServersClientsProcessIncomingPackets.jpg" target="_blank">flowchart</A>
+			here):</P>
+		<P class="myList">&nbsp;</P>
+		<UL>
+			<LI>
+				If the packet is a READ or WRITE request:
+				<UL>
+					<LI>
+						Drop the packet and stop.</LI>
+				</UL>
+			<LI>
+				If the packet is a DATA packet:
+				<UL>
+					<LI>
+						If the session is a WRITE session or the block number on the packet is not the
+						expecting one:
+						<UL>
+							<LI>
+								Drop the packet and stop.</LI>
+						</UL>
+					<LI>
+					Save the data on the packet.
+					<LI>
+					Send back an ACK packet.
+					<LI>
+					Increment the block number.
+					<LI>
+						If this is the last packet:
+						  <UL>
+							<LI>
+							Write data to file.
+							<LI>
+								Stop the TFTP session.</LI>
+						  </UL>
+				  </LI>
+				</UL>
+			<LI>
+				If the packet is an ACK packet:
+				  <UL>
+					<LI>
+						If the session is a READ session or the block number on the packet is not the
+						expecting one:
+						  <UL>
+							<LI>
+								Drop the packet and stop.</LI>
+						  </UL>
+					<LI>
+						If this is not the last packet:
+						  <UL>
+							<LI>
+							Increment the block number.
+							<LI>
+								Send the next block of data in a DATA packet.</LI>
+						  </UL>
+					<LI>
+						If this is the last packet:
+						  <UL>
+							<LI>
+								Stop the TFTP session.</LI>
+						  </UL>
+					</LI>
+				</UL>
+		  <LI>
+				If the packet is an ERROR packet:
+				  <UL>
+					<LI>
+						Stop the TFTP session.</LI>
+				  </UL>
+		  </LI>
+		</UL>
+	</body>
+</html>

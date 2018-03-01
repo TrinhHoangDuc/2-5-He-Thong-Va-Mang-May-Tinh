@@ -1,0 +1,674 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Cisco IOS Supported Commands: Switches</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+
+
+<p class="MainHeading1"> Switches: IOS
+<HR>
+<P> Packet Tracer 5.1 uses a simplified model of the Cisco IOS. Click on the <strong>CLI</strong> tab in the switch configuration window to access the  Cisco IOS command line interface for the switch. Use the <strong>Copy</strong> and <strong>Paste</strong> buttons to copy and paste text to and from the command line. This page lists the Cisco IOS command tree for Packet Tracer 5.1 switches. The tree contains only Cisco IOS command chains that are supported in Packet Tracer 5.1. </P>
+<p class="myPic">
+<img src="images/CLI_switchIOS.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">User Mode</p>
+<table  class="IOStable">
+  <tr>
+    <td class="TDpadded"> <ul>
+        <li><strong>&lt;1-99&gt;</strong></li>
+		<li><strong>connect</strong></li>
+		<li><strong>disconnect</strong></li>
+        <li><strong>enable</strong></li>
+        <li><strong>exit</strong></li>
+        <li><strong>logout</strong></li>
+        <li><strong>ping </strong>WORD</li>
+        <li><strong>resume  </strong>[ &lt;1-16&gt; | WORD ]</li>
+        <li><strong>show</strong>
+          <ul>
+            <li>cdp
+              <ul>
+                <li>entry
+                  <ul>
+                      <li>* [ protocol | version ]</li>
+                    <li>WORD [ protocol | version ]</li>
+                  </ul>
+                </li>
+                <li>interface
+                  <ul>
+                    <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;[ . ][ &lt;0-4294967295&gt; ]</li>
+                    <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;[ . ][ &lt;0-4294967295&gt; ]</li>
+                    <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt;[ . ][ &lt;0-4294967295&gt; ]</li>
+                  </ul>
+                </li>
+                <li>neighbors [ detail ]</li>
+              </ul>
+            </li>
+            <li>clock</li>
+            <li>dtp</li>
+            <li>flash:</li>
+            <li>history</li>
+            <li>interfaces
+              <ul>
+                <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt; [ switchPort ] </li>
+                <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt; [ switchPort ] </li>
+                <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt; [ switchPort ]</li>
+                <li>Vlan &lt;1-1005&gt;</li>
+                <li>Switchport </li>
+                <li>trunk</li>
+              </ul>
+            </li>
+            <li>ip interface
+              <ul>
+            	<li>Vlan &lt;1-1005&gt;</li>
+           	    <li>brief</li>
+              </ul>
+           </li>
+            <li>mac-address-table</li>
+            <li>version</li>
+            <li>vlan</li>
+          </ul>
+        </li>
+        <li><strong>telnet</strong> [ WORD ]</li>
+        <li><strong>traceroute</strong> WORD</li>
+    </ul></td>
+  </tr>
+</table>
+
+<p class="MainHeading2">Enable Mode</p>
+<table  class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+    	<li><strong>&lt;1-99&gt;</strong></li>
+     	 <li><strong>clear</strong></li>
+     	 <ul><li>arp-cache</li>
+			 <li>cdp table</li>
+			 <li>mac-address-table dynamic</li>
+			 <li>port-security</li>
+			 <li>vtp counters</li>
+	    </ul>
+        <li><strong>clock </strong>set hh:mm:ss [ &lt;1-31&gt; MONTH &lt;1993-2035&gt; | MONTH &lt;1-31&gt; &lt;1993-2035&gt; ]</li>
+        <li><strong>configure </strong>terminal</li>
+        <li><strong>connect </strong> [ WORD ]</li>
+        <li><strong>copy</strong>
+          <ul>
+            <li>running-config
+              <ul>
+                  <li>startup-config</li>
+                <li>tftp:</li>
+              </ul>
+            </li>
+            <li>startup-config
+              <ul>
+                  <li>running-config</li>
+                <li>tftp:</li>
+              </ul>
+            </li>
+            <li>tftp:
+              <ul>
+                  <li>flash:</li>
+                <li>running-config</li>
+                <li>startup-config</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>debug </strong>sw-vlan
+          <ul>
+            <li>packets</li>
+            <li>vtp
+              <ul>
+                <li>events</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>dir </strong><strong> </strong> [ flash: ]</li>
+        <li><strong>disable</strong></li>
+        <li><strong>disconnect</strong> <strong> </strong><strong> </strong>&lt;1-16&gt;</li>
+        <li><strong>enable</strong></li>
+        <li><strong>erase </strong>startup-config</li>
+        <li><strong>exit</strong></li>
+        <li><strong>logout</strong></li>
+        <li><strong>no </strong>debug
+          <ul>
+            <li>all</li>
+            <li>sw-vlan
+              <ul>
+                <li>packets</li>
+                <li>vtp
+                  <ul>
+                    <li>events </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>ping </strong>[ WORD ]</li>
+			<ul>
+				<li>[ Protocol ] [ Target IP address ] [ Repeat count ] [ Datagram size ] [ Timeout in seconds ] [ Extended commands ] [ Sweep range of sizes ]</li>
+			</ul>
+        <li><strong>reload</strong></li>
+        <li><strong>resume</strong> <strong> </strong>[ &lt;1-16&gt; | WORD ]</li>
+        <li><strong>setup</strong></li>
+        <li><strong>show</strong>
+          <ul>
+            <li>arp</li>
+            <li>cdp
+              <ul>
+                <li>entry
+                  <ul>
+                    <li>* [ protocol | version ]</li>
+                    <li>WORD [ protocol | version ]</li>
+                  </ul>
+                </li>
+                <li>interfaces
+                  <ul>
+                    <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;[ . ][ &lt;0-4294967295&gt; ]</li>
+                    <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;[ . ][ &lt;0-4294967295&gt; ]</li>
+                    <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt;[ . ][ &lt;0-4294967295&gt; ]</li>
+                  </ul>
+                </li>
+                <li>neighbors [ detail ]</li>
+              </ul>
+            </li>
+            <li>clock</li>
+            <li>dtp</li>
+            <li>flash:</li>
+            <li>history</li>
+            <li>hosts</li>
+            <li>interfaces
+              <ul>
+                <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt; [ switchPort ] </li>
+                <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt; [ switchPort ] </li>
+                <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt; [ switchPort ]</li>
+                <li>Vlan &lt;1-1005&gt;</li>
+                <li>Switchport </li>
+                <li>trunk</li>
+              </ul>
+            </li>
+            <li>ip interface
+              <ul>
+                <li>Vlan &lt;1-1005&gt;</li>
+                <li>brief</li>
+              </ul>
+            </li>
+            <li>mac-address-table 
+            <ul>
+				<li>static</li>
+				<li>dynamic</li>
+				<li>interfaces</li>
+				<ul>
+					<li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+					<li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+					<li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+				</ul>
+            </ul>
+            
+            <li>port-security
+              <ul>
+				<li>address</li>
+                <li>interface
+                  <ul>
+
+                    <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;
+                      <ul>
+                        <li>address
+                          <ul>
+                            <li>|
+                              <ul>
+                                <li>begin LINE</li>
+                                <li>exclude LINE</li>
+                                <li>include LINE</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>|
+                          <ul>
+                            <li>begin LINE</li>
+                            <li>exclude LINE</li>
+                            <li>include LINE</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;
+                      <ul>
+                        <li>address
+                          <ul>
+                            <li>|
+                              <ul>
+                                <li>begin LINE</li>
+                                <li>exclude LINE</li>
+                                <li>include LINE</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>|
+                          <ul>
+                            <li>begin LINE</li>
+                            <li>exclude LINE</li>
+                            <li>include LINE </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <ul>
+                      <ul>
+                        <li></li>
+                      </ul>
+                    </ul>
+                    <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt;
+                      <ul>
+
+                        <li>address
+                          <ul>
+                              <li>|
+                                <ul>
+                                  <li>begin LINE</li>
+                                  <li>exclude LINE</li>
+                                  <li>include LINE</li>
+                                </ul>
+                              </li>
+                          </ul>
+                        </li>
+                        <li>|
+                          <ul>
+                            <li>begin LINE</li>
+                            <li>exclude LINE</li>
+                            <li>include LINE</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>|
+                  <ul>
+                    <li>begin LINE</li>
+                    <li>exclude LINE</li>
+                    <li>include LINE</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>running-config</li>
+            <li>sessions</li>
+            <li>spanning-tree
+              <ul>
+                <li>vlan WORD </li>
+                <li>detail</li>
+                <li>active</li>
+                <li>interface</li>                
+                <ul>
+					<li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt; [ portfast ] </li>
+					<li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt; [ portfast ]</li>
+					<li>port-channel &lt;1-6&gt;</li>
+					<li>Vlan WORD [ portfast ]</li>					
+				</ul>
+				<li>summary [totals]</li>
+              </ul>
+            </li>
+            <li>startup-config</li>
+            <li>tcp [ brief ]</li>
+            <li>users </li>
+            <li>version</li>
+            <li>vlan [ brief | id &lt;1-1005&gt; | name WORD ]</li>
+            <li>vtp
+              <ul>
+                <li>counters</li>
+                <li>password</li>
+                <li>status</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>telnet</strong> [ WORD ]</li>
+			<li><strong>traceroute</strong> [ WORD ]</li>
+			<ul>
+				<li>[ Protocol ] [ Target IP address ] [ Source address ] [ Numeric display ] [ Timeout in seconds ] [ Probe count ] [ Minimum Time to Live ] [ Maximum Time to Live ]</li>
+			</ul>
+        <li> <strong>undebug</strong>
+          <ul>
+            <li>all</li>
+            <li>sw-vlan
+              <ul>
+                  <li>packets</li>
+                <li>vtp
+                  <ul>
+                        <li>events </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>vlan</strong> database</li>
+        <li><strong>write</strong> [ erase | memory | terminal ] </li>
+    </ul></td>
+  </tr>
+</table>
+
+<p class="MainHeading2">Global Mode</p>
+<table  class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+        <li><strong>banner</strong> motd LINE</li>
+        <li><strong>boot</strong> system flash WORD</li>
+        <li><strong>cdp</strong> run</li>
+        <li><strong>clock </strong>timezone WORD &lt;-23 - 23&gt; [ &lt;0-59&gt; ]</li>
+        <li><strong>enable</strong>
+          <ul>
+            <li>password
+              <ul>
+                  <li>7 WORD</li>
+                <li>LINE </li>
+              </ul>
+            </li>
+            <li>secret [ 0  | 5  ] LINE</li>
+          </ul>
+        </li>
+        <li><strong>end</strong></li>
+        <li><strong>exit</strong></li>
+        <li><strong>hostname</strong> WORD</li>
+        <li><strong>interface </strong>
+          <ul>
+            <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+            <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+            <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+            <li>Vlan &lt;1-1005&gt;</li>
+          </ul>
+        </li>
+        <li><strong>ip</strong>
+          <ul>
+            <li>default-gateway A.B.C.D</li>
+            <li>domain-lookup</li>
+            <li>host WORD A.B.C.D [ A.B.C.D ] [ A.B.C.D ]</li>
+            <li>name-server A.B.C.D</li>
+          </ul>
+        </li>
+        <li><strong>line</strong>
+          <ul>
+            <li>&lt;0-16&gt; [ &lt;1-16&gt; ]</li>
+            <li>console &lt;0-0&gt;</li>
+            <li>vty &lt;0-15&gt; [ &lt;1-15&gt; ]</li>
+          </ul>
+        </li>
+        <li><strong>mac-address-table</strong> static H.H.H vlan &lt;1-1005&gt;
+          interface
+            <ul>
+            <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+            <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+            <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+          </ul>
+        </li>
+        <li><strong>no</strong>
+          <ul>
+            <li>banner motd</li>
+            <li>boot system flash WORD</li>
+            <li>cdp run</li>
+            <li>clock timezone</li>
+            <li>enable
+              <ul>
+                <li>password [ 7 WORD ] </li>
+                <li>secret</li>
+              </ul>
+            </li>
+            <li>hostname</li>
+            <li>interface Vlan &lt;1-1005&gt;</li>
+            <li>ip
+              <ul>
+                <li>default-network A.B.C.D</li>
+                <li>domain-lookup</li>
+                <li>host WORD [ A.B.C.D ] [ A.B.C.D ] [ A.B.C.D ]</li>
+                <li>name-server</li>
+              </ul>
+            </li>
+            <li>mac-address-table static H.H.H vlan &lt;1-1005&gt; int
+              <ul>
+
+                <li>Ethernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+                <li>FastEthernet &lt;0-9&gt;/&lt;0-24&gt;</li>
+                <li>GigabitEthernet &lt;0-9&gt;/&lt;0-24&gt; </li>
+              </ul>
+            </li>
+            <li>service password-encryption</li>
+            <li>spanning-tree vlan WORD [priority | root [primary | secondary]]</li>
+            <li>spanning-tree mode</li>
+            <li>spanning-tree portfast default</li>
+            <li>vlan &lt;1-1005&gt;</li>
+            <li>vtp [ mode | password | version &lt;1-2&gt; ] </li>
+          </ul>
+        </li>
+        <li><strong>service</strong> password-encryption </li>
+        <li><strong>spanning-tree</strong> vlan WORD [priority &lt;0-61440&gt; | root [primary | secondary]]</li>
+        <li><strong>spanning-tree</strong> mode [ pvst | rapid-pvst ]</li>
+        <li><strong>spanning-tree</strong> portfast default</li>
+        <li><strong>vlan</strong> &lt;1-1005&gt;</li>
+        <li><strong>vtp</strong>
+          <ul>
+            <li>domain WORD</li>
+            <li>mode
+              <ul>
+                <li>client</li>
+                <li>server</li>
+                <li>transparent                </li>
+              </ul>
+            </li>
+            <li>password WORD</li>
+            <li>version &lt;1-2&gt;  </li>
+          </ul>
+        </li>
+    </ul></td>
+  </tr>
+</table>
+
+<p class="MainHeading2">Ethernet / FastEthernet / GigabitEthernet Interface Mode</p>
+<table  class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+        <li><strong>cdp</strong> enable </li>
+        <li><strong>description</strong> LINE</li>
+        <li><strong>duplex</strong> [ auto | full | half ] </li>
+        <li><strong>exit</strong></li>
+        <li><strong>mac-address</strong> H.H.H</li>
+        <li><strong>no</strong>
+          <ul>
+            <li>cdp enable </li>
+            <li>description</li>
+            <li>duplex</li>
+            <li>mac-address</li>
+            <li>shutdown</li>
+            <li>spanning-tree
+			<ul>
+				<li>portfast</li>
+				<li>link-type</li>
+				<li>vlan WORD port-priority</li>
+				<li>guard</li>
+			</ul>
+            <li></li>
+            <li>speed</li>
+            <li>switchport
+              <ul>
+                <li>access vlan</li>
+                <li>mode</li>
+                <li>native vlan</li>
+                <li>nonegotiate</li>
+                <li>port-security
+                  <ul>
+                    <li>mac-address
+                      <ul>
+                        <li>H.H.H</li>
+                        <li>sticky [ H.H.H ]</li>
+                      </ul>
+                    </li>
+                    <li>maximum</li>
+                    <li>violation </li>
+                  </ul>
+                </li>
+                <li>trunk [ allowed | native ] vlan</li>
+                <li>voice vlan </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>shutdown</strong></li>
+        <li><strong>spanning-tree</strong>
+        <ul>
+			<li>portfast [disable | trunk]</li>
+			<li>link-type [point-to-point | shared]</li>
+			<li>vlan WORD port-priority &lt;0-240&gt;</li>
+			<li>guard root</li>
+        </ul>       
+        <li><strong>speed</strong>  [ 10 | 100 | 1000 | auto ] <font size="-1"><em>(10/100 options are only available for FastEthernet and GigabitEthernet interfaces and 10/100/1000 options are only available for GigabitEthernet interfaces respectively)</em></font></li>
+        <li><strong>switchport</strong>
+          <ul>
+            <li>access vlan &lt;1-1005&gt;</li>
+            <li>mode
+              <ul>
+                <li>access</li>
+                <li>dynamic [ auto | desirable ] </li>
+                <li>trunk</li>
+              </ul>
+            </li>
+            <li>native vlan &lt;1-1005&gt;</li>
+            <li>nonegotiate</li>
+            <li>port-security
+              <ul>
+                <li>mac-address
+                  <ul>
+                      <li>H.H.H</li>
+                    <li>sticky [ H.H.H ]</li>
+                  </ul>
+                </li>
+                <li>maximum &lt;1-132&gt; </li>
+                <li>violation shutdown </li>
+              </ul>
+            </li>
+            <li>trunk
+               <ul>
+            	<li>allowed vlan
+                  <ul>
+                    <li>WORD</li>
+					<li>add &lt;1-1005&gt;</li>
+					<li>all</li>
+					<li>except &lt;1-1005&gt;</li>
+					<li>none</li>
+					<li>remove &lt;1-1005&gt;</li>
+                  </ul></li>
+                <li> native vlan &lt;1-1005&gt;</li>
+              </ul>
+            </li>
+            <li>voice vlan &lt;1-1005&gt; </li>
+          </ul>
+        </li>
+      </ul></td>
+  </tr>
+</table>
+
+<p class="MainHeading2">VLAN Interface Mode</p>
+<table  class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+        <li><strong>arp</strong> timeout &lt;0-2147483&gt; </li>
+        <li><strong>description</strong> LINE</li>
+        <li><strong>exit</strong></li>
+        <li><strong>ip </strong>address [ A.B.C.D A.B.C.D | dhcp ]</li>
+        <li><strong>mac-address</strong> H.H.H</li>
+        <li><strong>no</strong>
+          <ul>
+            <li>arp timeout</li>
+            <li>description</li>
+            <li>ip address [ dhcp ] </li>
+            <li>mac-address</li>
+            <li>shutdown</li>
+          </ul>
+        </li>
+        <li><strong>shutdown</strong></li>
+      </ul></td>
+  </tr>
+</table>
+
+<p class="MainHeading2">VLAN Configuration Mode</p>
+<table  class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+        <li><strong>exit</strong></li>
+        <li><strong>no</strong>
+            <ul>
+              <li>vlan &lt;1-1005&gt;</li>
+              <li>vtp
+                <ul>
+                    <li>client</li>
+                  <li>password</li>
+                  <li>transparent</li>
+                  <li>v2-mode </li>
+                </ul>
+              </li>
+            </ul>
+        </li>
+        <li><strong>vlan</strong> &lt;1-1005&gt; [ name ] [ WORD ]</li>
+        <li><strong>vtp</strong>
+            <ul>
+              <li>client</li>
+              <li>domain WORD </li>
+              <li>password WORD</li>
+              <li>server </li>
+              <li>transparent</li>
+              <li>v2-mode</li>
+            </ul>
+        </li>
+    </ul></td>
+  </tr>
+</table>
+
+<p class="MainHeading2">Line Configuration Mode</p>
+<table class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+        <li><strong>access-class</strong> [ &lt;1-199&gt; | &lt;1300-2699&gt; | WORD ] [ in | out ]</li>
+        <li><strong>databits</strong> [ 5 | 6 | 7 | 8 ] </li>
+        <li><strong>default</strong> [ databits | flowcontrol | history size |
+          parity | speed | stopbits ] </li>
+        <li><strong>exit</strong></li>
+        <li><strong>flowcontrol</strong> [ NONE | hardware | software ] </li>
+        <li><strong>history</strong> size &lt;0-256&gt;</li>
+        <li><strong>login</strong> [ local ]</li>
+        <li><strong>motd-banner</strong> </li>
+        <li><strong>no</strong> [ access-class [ &lt;1-199&gt; | &lt;1300-2699&gt; | WORD ] [ in | out ] | databits | flowcontrol | history size | login | motd-banner | parity | password | session-limit | speed | stopbits ]</li>
+        <li><strong>parity</strong> [ even | mark | none | odd | space ]</li>
+        <li><strong>password</strong>
+            <ul>
+              <li> 7 WORD</li>
+              <li>LINE </li>
+            </ul>
+        </li>
+        <li><strong>session-limit</strong> &lt;0-4294967295&gt;</li>
+        <li><strong>speed</strong> &lt;0-4294967295&gt;</li>
+        <li><strong>stopbits</strong> [ 1 | 1.5 | 2 ]</li>
+        </ul></td>
+  </tr>
+</table>
+<p class="MainHeading2">Rommon Mode</p>
+<table class="IOStable">
+  <tr>
+    <td class="TDpadded"><ul>
+        <li><strong>boot</strong></li>
+        <li><strong>dir</strong> flash:</li>
+        <li><strong>flash_init</strong></li>
+        <li><strong>help</strong></li>
+        <li><strong>reset</strong></li>
+        <li><strong>set</strong></li>
+        <li><strong>unset</strong> <em>variable</em></li>
+        <li><em>variable</em><strong>=</strong><em>value</em></li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

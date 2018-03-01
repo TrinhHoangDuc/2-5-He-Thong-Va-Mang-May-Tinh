@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Simulation Mode</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+
+
+<p class="MainHeading1">Simulation Mode</p>
+<hr>
+<p>In Simulation Mode, you can watch your network run at a slower pace, observing the paths that packets take and inspecting them in detail.</p>
+<p>When you switch to <strong>Simulation Mode</strong>, the Simulation Panel will appear. You can graphically create PDUs to send between devices using the <strong>Add Simple PDU</strong> button and then pressing the <strong>Auto Capture / Play</strong> button to start the simulation scenario. The <strong>Event List</strong> window records (or "captures") what happens as your PDU propagates through the network. You can control the speed of the simulation by using the <strong>Play Speed Slider</strong>. Pressing the <strong>Auto Capture / Play</strong> toggle button again will pause the simulation. If you need greater control of the simulation, use <strong>Capture / Forward</strong> button to manually run the simulation forward one step in time. You can use the <strong>Back</strong> button to revisit a previous timeframe and view the events that occurred then.</p>
+<table class="tableTip">
+  <tr>
+    <td class="TDtableTip">When your instance of Packet Tracer is connected to a Multiuser remote peer, you will not be able to switch to Simulation Mode. When you attempt to switch to Simulation Mode, you will be prompted to save an offline copy that is to be opened in a new instance of Packet Tracer. Clicking Yes will cause Packet Tracer to use the current offline saving settings to create an offline save and open it in a new Packet Tracer instance immediately. From there, you will be able to use Simulation Mode to examine packets in detail.</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>You can clear and restart the scenario with the <strong>Reset Simulation</strong> button, which clears all entries in the Event List.</p>
+<p>Note that while a simulation is playing, you may see packets that you did not create yourself. That is because some devices can generate their own packets (such as CDP packets) as the network runs. You can see what types of packets are being propagated in the network by looking at the <strong>Type</strong> field in the Event List. You can choose to hide these packets from view by clicking on the <strong>Edit Filters</strong> button and unchecking the appropriate filter from the menu that appears. To show all types of packets, simply click on the <strong>Show All</strong> button to re-enable them all. You can also create your own <strong>ACL Filter</strong> by clicking on the <strong>Edit ACL Filters</strong> button in the Edit Filters menu. In the <strong>ACL Filters</strong> dialog, you can create a <strong>New</strong> ACL Filter, <strong>Delete</strong> an ACL Filter, and <strong>Submit</strong> extended ACL statements to an ACL Filter.</p>
+<p class="myPic">
+<img src="images/mode_simulation_1.jpg">
+</p>
+<p>You can also hide the <strong>Event List</strong> (and the entire Simulation Panel) with the <strong>Event List</strong> button in the Simulation Bar. You will still have access to the <strong>Play Controls</strong> on the bar.</p>
+<p class="myPic">
+<img src="images/mode_simulation_2.jpg">
+</p>
+<p>&nbsp;</p>
+<p class="MainHeading2">The Events List and Time Flow of Events</p>
+<p class="myList">Packet Tracer 5.1 simulations do not run on a linear time scale. Time is determined by the events that occur. An event can be defined as any instance of a PDU that is generated in the network. The Event List keeps track of all such PDU instances and lists their information in various fields:</p>
+<p class="myList">&nbsp;</p>
+<ul>
+  <li><strong>Visible:</strong> An "eye" icon in the field means that an event is happening at the current simulation time. Whatever packets that are currently visible in the scenario animation will have this icon in the field.</li>
+  <li><strong>Time:</strong> This field indicates the time (in seconds) at which the event occurred, relative to the last time the simulation scenario restarted. This field is also the simulation time index.</li>
+  <li><strong>Last Device:</strong> This field indicates the previous location of the packet.</li>
+  <li><strong>At Device:</strong> This field indicates the current location of the packet.</li>
+  <li><strong>Type:</strong> This field indicates the packet type (ARP, CDP, DHCP, EIGRP, ICMP, RIP, TCP, UDP, VTP, STP, OSPF, DTP, Telnet, TFTP, HTTP, DNS, SSH, ICMPv6, LACP, PAgP, and ACL Filter).</li>
+  <li><strong>Info:</strong> This field shows detailed information about the packet instance, broken up into each layer of the OSI model. Learn more about this field in the "PDU info" page.</li>
+</ul>
+<table class="tableTip">
+  <tr>
+    <td class="TDtableTip">You can rearrange each of these fields in the Event List by dragging the title of a field to the desired position.</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Some events occur very frequently, happening every few milliseconds. Some events occur very infrequently, happening every minute or so. On the workspace, network events appear to happen one after another at the same speed (set by the slider), when actually they may be separated by milliseconds or by minutes. You can keep track of event timing by looking at the <strong>Time</strong> field in the Event List. Time only advances when there are events to be captured. If the network has no further events, time will essentially halt (until the next event occurs). The <strong>Auto Capture Indicator</strong> will tell you where the Event List stopped recording. You can enforce a constant delay of 1 ms between events by using the <strong>Constant Delay</strong> option. If this option is off, various factors will contribute to the overall delay of the event: transmission delay, propagation delay, and a randomly injected process delay.</p>
+<table class="tableTip">
+  <tr>
+    <td class="TDtableTip">If you filter out some type of PDUs on the Event List Filters, they will not show up on the Event List. They are still in the network; you just do not see them. The simulation runs more quickly because you will not see the filtered events, but all filtered PDUs still affect the network.</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p class="MainHeading2">Restarting a Scenario</p>
+<p class="myList">Whenever a simulation restarts, the simulation time resets to 0.000 and the Event List is cleared. You will restart the simulation if you do any of the following:</p>
+<p class="myList">&nbsp;</p>
+<ul>
+  <li>Press the <strong>Reset Simulation</strong> button.</li>
+  <li>Press the <strong>Power Cycle Devices</strong> button.</li>
+  <li>Switching to <strong>Realtime Mode</strong> (and switching back).</li>
+  <li>Modify the network in some way, such as deleting a device, adding a device, and changing the configuration on a device.</li>
+  <li>Enter any command in the global configuration mode of a device (in the CLI).</li>
+  <li>Switch to another scenario (see the "Managing Simulation Scenarios" section below).</li>
+  <li>Remove a PDU from the <strong>Protocol Data Units List</strong> (see the "Managing Simulation Scenarios" page).</li>
+</ul>
+<table class="tableTip">
+  <tr>
+    <td class="TDtableTip">Restarting a simulation does not erase current or scheduled PDU processes; it simply pauses the simulation and removes the visual clutter of events currently displayed on the Event List. The only way to remove PDU processes is from the <strong>User Created Packet Window</strong> (discussed on the "Managing Simulation Scenarios" page).</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p class="MainHeading2">Sending Simple PDUs (Ping)</p>
+<p>In Packet Tracer 5.1, the <strong>Add Simple PDU</strong> button is essentially a quick, graphical way to send one-shot pings. You can send pings between devices that have at least one interface with an IP address. To send a ping, press the <strong>Add Simple PDU</strong> button (the cursor changes to a "packet" icon), click on the source device, and then click on the destination device. Note that pings will only work if the devices have configured ports. After you make the request, the source device will queue an ICMP or ARP packet (or both), which will be on standby until you press the <strong>Auto Capture / Play</strong> or <strong>Capture / Forward</strong> button. When you press one of these buttons, the packets will start moving and you can observe the ping process. You may want to hide certain types of packets in the <strong>Event List Filters</strong> to avoid being confused by other packets in the network that you do not wish to observe.</p>
+<p>You can keep track of all of the PDUs you created with the <strong>Add Simple PDU</strong> button in the <strong>User Created Packet Window</strong>. See the "Scenarios" page for more information.</p>
+</body>
+</html>
